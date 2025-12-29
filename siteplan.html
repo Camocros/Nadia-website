@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nadia – Behavior Support Framework</title>
+
+  <!-- FONTS-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/siteplan.css">
+  
+
+
+</head>
+<body>
+  <header class="site-header">
+   <div class="logo"> <img
+          class="brand-logo"
+          src="images/nadialogo.png"
+          alt="Company Logo"
+          width="170"
+          height="70"
+        />
+      </a></div>
+
+    <nav class="main-nav">
+      <ul>
+       <a class="nav-link" href="#about">About Us</a></li>
+          <li><a class="nav-link" href="#OurStory">Our Story</a></li>
+          <li><a class="nav-link" href="#services">Services</a></li>
+          <li><a class="nav-link" href="#resources">Resources</a></li>
+        <li><a href="siteplan.html" class="nav-cta">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO MODIFED 11/28 --- ASK SADIE MORE INFROMATION ABPUT NADIA  -->
+    <section class="hero" id="top">
+  <div class="hero-inner">
+
+    <div class="hero-copy">
+      <p class="hero-eyebrow">
+
+      <h1 class="hero-title">
+        Where every child belongs,
+        <span>and every behavior tells a story.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+      Nadia helps educators and parents truly understand what a child’s behavior 
+      is communicating by providing them with the tools to create spaces where every 
+      child feels seen, supported, and safe.
+
+      </p>
+
+      <div class="hero-buttons">
+        <a href="bookus.html" class="btn primary">Book With Us</a>
+        
+      </div>
+
+      <div class="hero-trust">
+        <div class="trust-item">
+          <strong>Interactive trainings</strong>
+          
+        </div>
+        <div class="trust-item">
+          <strong>Program level consulting </strong>
+         
+        </div>
+        <div class="trust-item">
+          <strong>Behavior support strategies</strong>
+          
+        </div>
+      </div>
+    </div>
+
+  
+
+  </div>
+</section>
+
+    <!-- FEATURES //  POSSIBLE IMAGES  -->
+    <section class="features" id="features">
+  <h2>Why Early Education Programs Choose Nadia</h2>
+
+  <div class="feature-rows">
+
+    <article class="feature-row row-right">
+      <div class="feature-text">
+        <h3>Playful Learning</h3>
+        <p>Interactive activities that help children learn through games, stories, and exploration.</p>
+      </div>
+      <div class="feature-media">
+        <img src="images/Boardimage.jpeg" alt="Playful learning illustration">
+      </div>
+    </article>
+
+    <article class="feature-row row-left">
+      <div class="feature-text">
+        <h3>Guided Progress</h3>
+        <p>Clear learning paths designed by educators to track skills and celebrate milestones.</p>
+      </div>
+      <div class="feature-media">
+        <img src="images/Boardimage.jpeg" alt="Guided progress illustration">
+      </div>
+    </article>
+
+    <article class="feature-row row-right">
+      <div class="feature-text">
+        <h3>Safe Environment</h3>
+        <p>A child-friendly space with content curated specifically for ages 5 to 12.</p>
+      </div>
+      <div class="feature-media">
+        <img src="images/Boardimage.jpeg" alt="Safe environment illustration">
+      </div>
+    </article>
+
+  </div>
+</section>
+
+    <!-- HIGHLIGHT / IMAGE AREA #2-->
+    <section class="highlight" id="about">
+      <div class="highlight-content">
+        <h2>How Nadia Works</h2>
+        <p>
+          Nadia organizes learning into short, focused sessions that fit into a child’s day. 
+          Each module blends reading, problem-solving, and creativity to keep kids engaged 
+          while building strong foundations in core skills.
+        </p>
+        <p>
+          Parents can check simple progress reports, see recommended activities, 
+          and adjust the pace according to their child’s needs.
+        </p>
+      </div>
+
+      <div class="highlight-visual">
+        <!-- IMAGE ABOUT THE FRAMEWORK -->
+        <img src="images/Boardimage.jpeg" alt="Safe environment illustration">
+      </div>
+    </section>
+
+    <!-- SIGN UP SECTION ?? OR SOMETHING ELSE  -->
+    <section class="signup-section" id="signup">
+      <h2>Get Early Access</h2>
+      <p>Join the waiting list and be the first to try Nadia with your kids.</p>
+
+      <form class="signup-form">
+        <label for="parent-name">Parent Name</label>
+        <input type="text" id="parent-name" name="parent-name" placeholder="Your name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <button type="submit" class="btn primary">Request Access</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Nadia – Learning Framework for Kids. ' AUTHOR - C Camilo Serna' </p>
+  </footer>
+
+  <script>
+      // SECOND FUNCTION IN JAVASCRIPT -  DATE !
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="script/script.js"></script>
+</body>
+</html>
