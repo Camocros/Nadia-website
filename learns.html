@@ -3,81 +3,184 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nadia – Behavior Support Framework</title>
+  <title>Nadia – Learn More</title>
 
-  <!-- FONTS-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="style/siteplan.css">
 
-
+  <link rel="stylesheet" href="style/siteplan.css">
 </head>
+
 <body>
   <header class="site-header">
-    <div class="logo">Nadia | Learn More </div>
+    <div class="logo">
+      <img class="brand-logo" src="images/nadialogo.png" alt="Company Logo" width="170" height="70" />
+    </div>
 
+    <!-- FIX: nav-cta on the current page (Learn More) -->
     <nav class="main-nav">
       <ul>
         <li><a href="bookus.html">Book With Us</a></li>
-        <li><a href="learns.html">Learn More</a></li>
-        <li><a href="index.html" class="nav-cta">Home</a></li>
+        <li><a href="learns.html" class="nav-cta">About Us</a></li>
+        <li><a href="index.html">Home</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <!-- HERO MODIFED 11/28 --- ASK SADIE MORE INFROMATION ABPUT NADIA  -->
-    <section class="hero" id="top">
-      <div class="hero-content">
-        <h1>Nadia Web Page #2--</h1>
-        <p class="hero-subtitle">Behavior Support Framework</p>
 
-        <div class="hero-buttons">
-          <a href="bookus.html" class="btn primary">Book With Us</a>
-          <a href="learns.html" class="btn secondary">Learn More</a>
+    <!-- HERO: ABOUT US -->
+    <section class="section-hero section-hero--about" id="top">
+      <div class="section-hero-inner reveal">
+        <p class="section-eyebrow">About Us</p>
+        <h1 class="section-title">Support built for real classrooms</h1>
+        <p class="section-subtitle">
+          Turning behavior into understanding through practical, family-centered support.
+        </p>
+
+        <!-- Added actions to match Book page style -->
+        <div class="learn-hero-actions">
+          <a href="bookus.html" class="btn primary btn-cta">Book With Us</a>
+          <a href="#about" class="btn book-ghost">Our Story</a>
         </div>
       </div>
     </section>
 
-   <section class="founders-section">
-  <h2>Meet Our Founders</h2>
+    <!-- ABOUT US (minimal) -->
+    <section class="about-shell" id="about">
+      <div class="about-intro reveal">
+        <p class="about-kicker">Our Story</p>
+        <h2 class="about-heading">A framework designed for clarity and consistency.</h2>
+        <p class="about-lead">
+          Nadia helps educators and parents understand what behavior is communicating and respond with supportive,
+          consistent strategies that work in real life.
+        </p>
+      </div>
 
-  <div class="founders-grid">
-    
-    <!-- SADIE --> 
-     <!-- Images with Lazy Loading AND DOM interaction-->
-    <article class="founder-card">
-      <img src="images/sadie.jpeg" id="founder-sadie" class="founder-photo" loading="lazy">
-      <h3>Sadie Rodríguez</h3>
-      <p class="founder-role">Founder & CEO</p>
-      <p class="founder-bio">
-        She transforms limited resources into meaningful impact, creating practical solutions that help early education programs grow with clarity and purpose.
-      </p>
-    </article>
+      <div class="about-cards">
+        <article class="about-card reveal">
+          <div class="about-icon" aria-hidden="true">🧩</div>
+          <h3>Practical Framework</h3>
+          <p>Simple tools that help you respond consistently and reduce stress for everyone.</p>
+        </article>
 
-    <!-- ZOEI -->
-     <!-- Images with Lazy Loading AND DOM interaction -->
-    <article class="founder-card">
-     <img src="images/zoie.jpg" id="founder-zoie" class="founder-photo" loading="lazy">
-      <h3>Zoei Arnold</h3>
-      <p class="founder-role">Co-Founder & Consulting Lead</p>
-      <p class="founder-bio">
-        She turns complex challenges into simple pathways, guiding schools and families with strategies that bring stability, progress, and confidence.
-      </p>
-    </article>
+        <article class="about-card reveal">
+          <div class="about-icon" aria-hidden="true">🌿</div>
+          <h3>Program Support</h3>
+          <p>Support for routines, classroom systems, and team alignment across your program.</p>
+        </article>
 
-  </div>
-</section>
-<footer class="site-footer">
-    <p>&copy; <span id="year"></span> Nadia – Learning Framework for Kids. ' AUTHOR - C Camilo Serna' </p>
+        <article class="about-card reveal">
+          <div class="about-icon" aria-hidden="true">🛠️</div>
+          <h3>Tools & Training</h3>
+          <p>Hands-on trainings and strategies you can apply immediately.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="soft-divider" role="separator" aria-hidden="true"></div>
+
+    <!-- BIO 1 -->
+    <section class="bio-section">
+      <div class="bio-grid reveal">
+        <div class="bio-photo-wrap">
+          <img class="bio-photo" src="images/sadie.jpeg" alt="Nadia Rodríguez" loading="lazy">
+        </div>
+
+        <div class="bio-copy">
+          <p class="bio-kicker">Founder & CEO</p>
+          <h3 class="bio-name">Nadia Rodríguez</h3>
+          <p class="bio-role">Behavior Support Framework</p>
+
+          <div class="bio-text">
+            <p>
+              Nadia supports educators and families with clear, compassionate strategies that improve daily routines,
+              relationships, and outcomes.
+            </p>
+            <p>
+              Her approach centers on understanding the “why” behind behavior and building environments where children feel safe.
+            </p>
+          </div>
+
+          <div class="bio-chips">
+            <span class="chip">Classroom Systems</span>
+            <span class="chip">Staff Coaching</span>
+            <span class="chip">Program Growth</span>
+          </div>
+
+          <blockquote class="bio-quote">
+            “When we understand behavior, we can respond with support—not stress.”
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <div class="soft-divider" role="separator" aria-hidden="true"></div>
+
+    <!-- BIO 2 (alternating) -->
+    <section class="bio-section">
+      <div class="bio-grid bio-flip reveal">
+        <div class="bio-photo-wrap">
+          <img class="bio-photo" src="images/zoie.jpeg" alt="Zoei Arnold" loading="lazy">
+        </div>
+
+        <div class="bio-copy">
+          <p class="bio-kicker">Co-Founder & Consulting Lead</p>
+          <h3 class="bio-name">Zoei Arnold</h3>
+          <p class="bio-role">Program Consulting</p>
+
+          <div class="bio-text">
+            <p>
+              Zoei partners with programs to strengthen systems and support staff with clear routines and practical coaching.
+            </p>
+            <p>
+              She focuses on scalable strategies that help teams stay consistent and confident.
+            </p>
+          </div>
+
+          <div class="bio-chips">
+            <span class="chip">Family Support</span>
+            <span class="chip">Consulting</span>
+            <span class="chip">Clear Pathways</span>
+          </div>
+
+          <blockquote class="bio-quote">
+            “Consistency creates safety—for children and for teams.”
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="learn-cta reveal">
+      <div class="learn-cta-inner">
+        <h2>Ready to work with Nadia?</h2>
+        <p>Book a time that works for you and we’ll send the next steps right away.</p>
+        <a href="bookus.html" class="btn primary btn-cta">Book With Us</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Nadia – Learning Framework for Kids. ' AUTHOR - C Camilo Serna'</p>
   </footer>
 
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
-<script src="script/script.js"></script>
+  <!-- Reveal animation (no libs) -->
+  <script>
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.12 });
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+    els.forEach(el => io.observe(el));
+  </script>
 </body>
 </html>

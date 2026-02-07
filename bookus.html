@@ -3,74 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nadia – Behavior Support Framework</title>
+  <title>Nadia – Book With Us</title>
 
-  <!-- FONTS-->
+  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style/siteplan.css">
-
-
 </head>
+
 <body>
   <header class="site-header">
-    <div class="logo">Nadia | Book with Us </div>
+    <div class="logo">
+      <img
+        class="brand-logo"
+        src="images/nadialogo.png"
+        alt="Company Logo"
+        width="170"
+        height="70"
+      />
+    </div>
 
     <nav class="main-nav">
       <ul>
-        <li><a href="bookus.html">Book With Us</a></li>
-        <li><a href="learns.html">Learn More</a></li>
-        <li><a href="index.html" class="nav-cta">Home</a></li>
+        <li><a href="bookus.html" class="nav-cta">Book With Us</a></li>
+        <li><a href="learns.html">About Us</a></li>
+        <li><a href="index.html">Home</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <!-- HERO MODIFED 11/28 --- ASK SADIE MORE INFROMATION ABPUT NADIA  -->
-    <section class="hero" id="top">
-      <div class="hero-content">
-        <h1>Nadia Web Page #3--</h1>
-        
-        <p class="hero-subtitle">Behavior Support Framework</p>
 
-        <div class="hero-buttons">
-          <a href="bookus.html" class="btn primary">Book With Us</a>
-          <a href="learns.html" class="btn secondary">Learn More</a>
+    <!-- HERO (Booking page) -->
+    <section class="section-hero section-hero--book" id="top">
+      <div class="section-hero-inner">
+        <p class="section-eyebrow">Book With Us</p>
+        <h1 class="section-title">Support that feels clear, kind, and practical.</h1>
+        <p class="section-subtitle">
+          Choose the type of support you need and reserve a time that works best.
+          We’ll meet you where you are—schools, programs, and families.
+        </p>
+
+        <div class="book-hero-actions">
+          <a href="#booking" class="btn primary btn-cta">Schedule Now</a>
+          <a href="#options" class="btn book-ghost">See Options</a>
+        </div>
+
+        <div class="book-quick-points" aria-label="Quick details">
+          <span class="badge">Virtual or onsite</span>
+          <span class="badge">Clear next steps</span>
+          <span class="badge">Evidence-informed</span>
         </div>
       </div>
     </section>
 
-    <!--- BOOKING PART ---->
+    <!-- BOOKING (VISUAL FOCUS) -->
+    <section class="booking-section booking-hero" id="booking">
+      <div class="booking-focus-card">
 
-    <section class="booking-section">
-  <h2>Book an Appointment</h2>
-  <p id="returning-user-message" class="small-greeting"></p>
-  <p class="booking-sub">
-    Schedule a session with our Behavior Support specialist.  
-    Pick a day and time that works best for you.
-  </p>
+        <div class="booking-icon-xl">📅</div>
 
-  <div class="booking-card">
-    <div class="booking-icon">📅</div>
-    <div class="booking-text">
-      <h3>Google Calendar Booking</h3>
-      <p>Use our online calendar to reserve your appointment instantly.</p>
-    </div>
+        <h2>Book an appointment</h2>
 
-    <a href="https://calendar.app.google/HwtbZpHaxh4tRJky7" target="_blank" class="btn primary booking-btn">
-      Schedule Now
-    </a>
-  </div>
-</section>
-<footer class="site-footer">
-    <p>&copy; <span id="year"></span> Nadia – Learning Framework for Kids. ' AUTHOR - C Camilo Serna' </p>
+        <p class="booking-lead">
+          Reserve a time in our calendar.  
+          You’ll get a confirmation and the next steps right away.
+        </p>
+
+        <div class="booking-provider">
+          <h3>Google Calendar Booking</h3>
+          <p>Use our online calendar to reserve your appointment instantly.</p>
+        </div>
+
+        <div class="booking-highlights">
+          <span class="meta-pill">Fast confirmation</span>
+          <span class="meta-pill">Clear agenda</span>
+          <span class="meta-pill">Follow-up plan</span>
+        </div>
+
+        <a
+          href="https://calendar.app.google/HwtbZpHaxh4tRJky7"
+          target="_blank"
+          class="btn primary btn-cta booking-cta"
+        >
+          Schedule now
+        </a>
+
+      </div>
+    </section>
+
+    <!-- OPTIONS (INFO ONLY - no "Book this" buttons) -->
+    <section class="book-section" id="options">
+      <div class="book-head">
+        <h2>What would you like to book?</h2>
+        <p>
+          Pick the service that best matches your needs. If you’re unsure, start with a short intro call.
+        </p>
+      </div>
+
+      <div class="book-grid">
+        <article class="book-card">
+          <div class="book-card-top">
+            <div class="book-icon">🧩</div>
+            <h3>Behavior Support Strategies</h3>
+          </div>
+          <p>
+            Practical strategies to support routines, transitions, communication, and emotional regulation.
+          </p>
+          <ul class="book-list">
+            <li>Behavior as communication</li>
+            <li>Simple plan you can implement</li>
+            <li>Tools for caregivers & staff</li>
+          </ul>
+        </article>
+
+        <article class="book-card">
+          <div class="book-card-top">
+            <div class="book-icon">🎓</div>
+            <h3>Interactive Trainings</h3>
+          </div>
+          <p>
+            Hands-on training sessions for educators and teams—real scenarios, real tools, easy follow-through.
+          </p>
+          <ul class="book-list">
+            <li>Interactive format</li>
+            <li>Team-friendly materials</li>
+            <li>Q&A + action steps</li>
+          </ul>
+        </article>
+
+        <article class="book-card">
+          <div class="book-card-top">
+            <div class="book-icon">🏫</div>
+            <h3>Program Level Consulting</h3>
+          </div>
+          <p>
+            Support for systems, classrooms, and program-wide routines to help everyone feel safe and supported.
+          </p>
+          <ul class="book-list">
+            <li>Observation & recommendations</li>
+            <li>Staff coaching</li>
+            <li>Long-term improvement</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Nadia – Learning Framework for Kids. ' AUTHOR - C Camilo Serna'</p>
   </footer>
 
   <script>
-    // SECOND FUNCTION IN JAVASCRIPT -  DATE !
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-  <script src="script/script.js"></script>    <!---JAVASCRIPT LOCALSTORAGE-->
+  <script src="script/script.js"></script>
 </body>
 </html>
