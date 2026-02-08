@@ -464,7 +464,7 @@ main {
 
 /* Backgrounds for each hero */
 .section-hero--about {
-  background-image: url("../images/Boardimage.jpeg");
+  background-image: url("../images/aboutus.jpeg");
 }
 
 .section-hero--nadia {
@@ -790,7 +790,7 @@ main {
 
 /* Hero background specific to booking page */
 .section-hero--book {
-  background-image: url("../images/bookwithus.jpg");
+  background-image: url("../images/bookwithus1.jpg");
 }
 
 /* Book hero actions */
