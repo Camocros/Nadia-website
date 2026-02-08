@@ -90,12 +90,14 @@ main {
   opacity: 1;
 }
 
-.nav-cta {
+/* Active page highlight (safe when you reorder the nav) */
+.main-nav a[aria-current="page"] {
   padding: 0.45rem 0.95rem;
   border-radius: 999px;
   background-color: var(--green-main);
   color: var(--white);
   box-shadow: 0 10px 16px rgba(46, 204, 113, 0.22);
+  opacity: 1;
 }
 
 /* ====== BUTTONS ====== */
@@ -119,7 +121,7 @@ main {
   box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* ====== HERO ====== */
+/* ====== INDEX HERO ====== */
 .hero {
   border-radius: 1.25rem;
   padding: 3.2rem 2.5rem;
@@ -205,12 +207,12 @@ main {
   box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.16);
 }
 
-
 /* ====== FEATURES (ALTERNATING ROWS) ====== */
 .features h2 {
   text-align: center;
   color: var(--green-dark);
   margin-bottom: 1.5rem;
+  font-size: xx-large;
 }
 
 .feature-rows {
@@ -275,14 +277,16 @@ main {
   align-items: center;
   justify-content: center;
   background-color: #c9f6da;
+  overflow: hidden;
 }
 
 .highlight-visual img {
   width: 100%;
   height: 100%;
   max-height: 320px;
-  object-fit: cover;
-  border-radius: 0.75rem;
+  object-fit: contain; /* no recorte raro */
+  object-position: center;
+  border-radius: 0.9rem;
 }
 
 /* ====== SIGNUP ====== */
@@ -344,15 +348,8 @@ main {
   color: var(--green-dark);
 }
 
-
-
-
 /* ====== RESPONSIVE ====== */
 @media (min-width: 850px) {
-  .hero-trust {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .feature-row {
     grid-template-columns: 1.2fr 0.8fr;
     padding: 1.4rem 1.5rem;
@@ -403,12 +400,9 @@ main {
   }
 }
 
-
 /* =========================
-   LEARNS PAGE — Minimal + Tech touches
+   SHARED IMAGE HERO (About + Book)
 ========================= */
-
-/* Reusable image-hero blocks (like index) */
 .section-hero {
   border-radius: 1.25rem;
   padding: 3.2rem 2.5rem;
@@ -419,6 +413,14 @@ main {
 
   background-size: cover;
   background-position: center;
+}
+
+/* Make hero background consistent height across pages */
+.hero,
+.section-hero {
+  min-height: 460px;
+  display: flex;
+  align-items: center;
 }
 
 .section-hero::before {
@@ -447,6 +449,7 @@ main {
   border-radius: 999px;
   background: rgba(255,255,255,0.18);
   backdrop-filter: blur(6px);
+  color: #f7fbf3;
 }
 
 .section-title {
@@ -467,17 +470,47 @@ main {
   background-image: url("../images/aboutus.jpeg");
 }
 
-.section-hero--nadia {
-  background-image: url("../images/sadie.jpeg");
-  background-position: center top;
+.section-hero--book {
+  background-image: url("../images/bookwithus1.jpg");
 }
 
-.section-hero--zoei {
-  background-image: url("../images/zoie.jpg");
-  background-position: center top;
+/* =========================
+   Founders title block (NOT .section-title)
+   Use HTML: <div class="founders-title">...</div>
+========================= */
+.founders-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
 }
 
-/* About section content */
+.section-line {
+  width: 48px;
+  height: 4px;
+  background-color: var(--green-main);
+  border-radius: 999px;
+}
+
+.founders-title h3 {
+  margin: 0 0 0.15rem;
+  color: var(--green-dark);
+}
+
+.founders-title h5 {
+  margin: 0;
+  max-width: 720px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(15, 61, 46, 0.8);
+}
+
+/* =========================
+   LEARNS PAGE — About content
+========================= */
 .about-shell {
   margin-top: 0;
 }
@@ -513,53 +546,6 @@ main {
   opacity: 0.95;
 }
 
-.about-cards {
-  display: grid;
-  gap: 1rem;
-  margin-top: 1.4rem;
-}
-
-.about-card {
-  background: rgba(255,255,255,0.92);
-  border: 1px solid var(--green-soft);
-  border-radius: 1.1rem;
-  padding: 1.25rem 1.2rem;
-  box-shadow: var(--shadow-soft);
-  position: relative;
-  overflow: hidden;
-}
-
-.about-card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  background: radial-gradient(circle at top left, rgba(46,204,113,0.18), transparent 55%);
-  pointer-events: none;
-}
-
-.about-icon {
-  font-size: 1.55rem;
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  background: rgba(217, 251, 230, 0.75);
-  border: 1px solid rgba(30, 132, 73, 0.12);
-  margin-bottom: 0.75rem;
-}
-
-.about-card h3 {
-  margin: 0 0 0.35rem;
-  color: var(--green-dark);
-}
-
-.about-card p {
-  margin: 0;
-  opacity: 0.92;
-}
-
-/* Divider */
 .soft-divider {
   height: 1px;
   margin: 2.25rem 0;
@@ -628,32 +614,6 @@ main {
   margin-bottom: 0;
 }
 
-.bio-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  margin-top: 1.1rem;
-}
-
-.chip {
-  background: rgba(217, 251, 230, 0.85);
-  border: 1px solid rgba(30, 132, 73, 0.14);
-  color: var(--green-dark);
-  font-weight: 700;
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-}
-
-.bio-quote {
-  margin: 1.2rem 0 0;
-  padding: 0.9rem 1rem;
-  border-left: 4px solid rgba(46,204,113,0.55);
-  background: rgba(241, 255, 247, 0.9);
-  border-radius: 0.9rem;
-  opacity: 0.95;
-}
-
 /* Alternate layout */
 .bio-flip .bio-photo-wrap {
   order: 2;
@@ -684,7 +644,30 @@ main {
   opacity: 0.92;
 }
 
-/* Subtle reveal */
+/* =========================
+   HERO actions (About + Book)
+========================= */
+.learn-hero-actions,
+.book-hero-actions {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.book-ghost {
+  background: rgba(255,255,255,0.16);
+  color: #f7fbf3;
+  border: 1px solid rgba(255,255,255,0.28);
+  backdrop-filter: blur(6px);
+}
+.book-ghost:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.18);
+}
+
+/* =========================
+   Reveal animation helper
+========================= */
 .reveal {
   opacity: 0;
   transform: translateY(14px);
@@ -695,46 +678,9 @@ main {
   transform: translateY(0);
 }
 
-/* Responsive */
-@media (min-width: 900px) {
-  .about-cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .bio-grid {
-    grid-template-columns: 0.95fr 1.05fr;
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 700px) {
-  .section-hero {
-    margin: 1.5rem 0 3rem;
-    padding: 2.4rem 1.4rem;
-  }
-
-  .section-title {
-    font-size: 2.1rem;
-  }
-}
-
-@media (max-width: 520px) {
-  .bio-photo {
-    height: 360px;
-  }
-
-  .bio-flip .bio-photo-wrap,
-  .bio-flip .bio-copy {
-    order: unset;
-  }
-}
 /* =========================
-   boton Book with us aniimation */
-
-   /* =========================
-   CTA SIMPLE (no pseudo-elements) — guaranteed visible
+   CTA Heartbeat (buttons)
 ========================= */
-
 .btn.primary.btn-cta {
   background: var(--green-main) !important;
   color: var(--white) !important;
@@ -745,7 +691,6 @@ main {
   box-shadow: 0 14px 26px rgba(46, 204, 113, 0.30);
 }
 
-/* Keyframes: scale + glow (super noticeable) */
 @keyframes ctaHeartbeat {
   0% {
     transform: scale(1);
@@ -765,107 +710,28 @@ main {
   }
 }
 
-/* Run it */
 .btn.primary.btn-cta {
   animation: ctaHeartbeat 1.3s ease-in-out infinite;
 }
 
-/* Hover still feels nice */
 .btn.primary.btn-cta:hover {
   transform: scale(1.08);
   box-shadow: 0 26px 52px rgba(46, 204, 113, 0.55);
 }
 
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .btn.primary.btn-cta {
     animation: none;
   }
 }
-/* book wiht us more css content */
+
 /* =========================
    BOOK WITH US — page styles
-   PASTE THIS AT THE VERY END of style/siteplan.css
 ========================= */
-
-/* Hero background specific to booking page */
-.section-hero--book {
-  background-image: url("../images/bookwithus1.jpg");
-}
-
-/* Book hero actions */
-.book-hero-actions {
-  margin-top: 1.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.9rem;
-}
-
-/* Secondary hero button (ghost) */
-.book-ghost {
-  background: rgba(255,255,255,0.16);
-  color: #f7fbf3;
-  border: 1px solid rgba(255,255,255,0.28);
-  backdrop-filter: blur(6px);
-}
-.book-ghost:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.18);
-}
-
-/* Quick points under hero */
-/* BOOK PAGE BADGES — match Home style */
-.book-quick-points {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-/* Reuse the exact badge style from Home */
-.book-quick-points .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  padding: 0.45rem 0.75rem;
-  border-radius: 999px;
-
-  font-weight: 600;
-  font-size: 0.95rem;
-
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(217, 251, 230, 0.95);
-  color: var(--green-dark);
-
-  cursor: default;
-  white-space: nowrap;
-
-  /* Key for busy hero backgrounds (keeps the same style) */
-  backdrop-filter: blur(6px);
-}
-
-/* Same dot accent */
-.book-quick-points .badge::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--green-main);
-  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.16);
-}
-
-/* If your hero image is too bright, this improves readability without changing style */
-.section-hero--book .book-quick-points .badge {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(217, 251, 230, 0.95);
-}
-
-/* Section spacing */
 .book-section {
   margin-top: 2.5rem;
 }
 
-/* Head block */
 .book-head {
   max-width: 78ch;
   margin: 0 auto 1.25rem;
@@ -880,7 +746,6 @@ main {
   opacity: 0.92;
 }
 
-/* Options grid */
 .book-grid {
   display: grid;
   gap: 1rem;
@@ -942,10 +807,7 @@ main {
   margin-bottom: 0.35rem;
 }
 
-/* =========================
-   BOOKING — VISUAL FOCUS
-========================= */
-
+/* Booking focus card */
 .booking-hero {
   margin-top: 3rem;
 }
@@ -1007,7 +869,6 @@ main {
   gap: 0.55rem;
 }
 
-/* Reuse pills */
 .meta-pill {
   display: inline-flex;
   padding: 0.35rem 0.65rem;
@@ -1019,48 +880,86 @@ main {
   font-size: 0.9rem;
 }
 
-/* Fix CTA width so it doesn't look too long */
 .booking-cta {
   padding: 0.75rem 1.4rem;
   width: fit-content;
   margin: 0.2rem auto 0;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* Book hero quick points */
+.book-quick-points {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
 
+.book-quick-points .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(217, 251, 230, 0.95);
+  color: var(--green-dark);
+
+  cursor: default;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+}
+
+.book-quick-points .badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--green-main);
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.16);
+}
+
+.section-hero--book .book-quick-points .badge {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(217, 251, 230, 0.95);
+}
+
+/* =========================
+   RESPONSIVE (Shared hero + About)
+========================= */
 @media (min-width: 900px) {
   .book-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .bio-grid {
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .section-hero {
+    margin: 1.5rem 0 3rem;
+    padding: 2.4rem 1.4rem;
+  }
+
+  .section-title {
+    font-size: 2.1rem;
+  }
 }
 
 @media (max-width: 520px) {
-  .booking-focus-card {
-    padding: 2.2rem 1.3rem;
+  .bio-photo {
+    height: 360px;
   }
 
-  .book-card-top {
-    grid-template-columns: 52px 1fr;
+  .bio-flip .bio-photo-wrap,
+  .bio-flip .bio-copy {
+    order: unset;
   }
-
-  .book-icon {
-    width: 52px;
-    height: 52px;
-  }
-}
-
-/* en index.html dentro de la imagen hay una frase qeu dice Early behavior support
-por defecto esta en color verde oliva esto la hace blanca */
-
-.section-eyebrow {
-  color: #f7fbf3;
-}
-
-.features h2 {
-  text-align: center;
-  color: var(--green-dark);
-  margin-bottom: 1.5rem;
-  font-size: xx-large;
 }
